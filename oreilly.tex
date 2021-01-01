@@ -1,45 +1,52 @@
-\documentclass{article}
+\documentclass[a4paper]{article}
 
-\usepackage{tikz,fix-cm}
-\newcommand\veryhuge{\fontsize{40}{48}\selectfont}
+\usepackage{lmodern}         % for the looks
+\usepackage[T1]{fontenc}     % to hypenate accented characters correctly
+\usepackage[utf8]{inputenc}  % just in case we go for non-ascii
+\usepackage{tikz}            % the graphics
+\usepackage{textcomp}        % for \textregistered
 
 \begin{document}
 \thispagestyle{empty}
+
 \begin{tikzpicture}[remember picture,overlay]
-% upper
-\node [align=center] at (current page.north)
-{\begin{tikzpicture}[remember picture, overlay]
-	\fill[fill=pink] (-8,0) rectangle (8,-1);
-	\node[anchor=north] at (0,-1) {\large\textit{I do not recommend that you use this template for your book cover.}};
-	\fill[fill=pink] (-8,-2) rectangle (8,-6);
-	\node[anchor=west,align=left] at (-7.7,-4) {\veryhuge\color{black}\textbf{O'Reilly Template}\\\veryhuge\textbf{in \LaTeX}};
-	\node[anchor=north west] at (-8,-6) {\large\textbf{I don't know why do I make this.}};
-\end{tikzpicture}};
-% upper-right
-\node [shift={(-5cm,-5cm)}] at (current page.north east)
-{\begin{tikzpicture}[remember picture, overlay]
-	\draw[fill=black] (0,5) -- (1.5,5) -- (5,1.5) -- (5,0) -- cycle ;
-	\node[inner sep=0pt,rotate=-45] (rev) at (2.9,2.9) {\huge\color{white}\textbf{Revision 1}};
-\end{tikzpicture}};
-% bottom
-\node [align=center] at (current page.south)
-{\begin{tikzpicture}[remember picture, overlay]
-	\node[anchor=south west, align=left] at (-8,2) {This is left};
-	\node[anchor=south east, align=right] at (8,2) {This is\\right};
-\end{tikzpicture}};
+
+\node [align=center] at (current page.north) % upper
+      {\begin{tikzpicture}[remember picture, overlay]
+	  \fill[fill=blue!30] (-10,0) rectangle (10,-0.5);
+	  \node[anchor=north] at (0,-0.5) {\Large\textit{Getting kudos on AO3}};
+      \end{tikzpicture}};
+      
+\node [align=center] at (current page.center) % dragon
+      {\begin{tikzpicture}[remember picture, overlay]
+          \node[anchor=center,align=center] at (0,5)
+               {\includegraphics[width=1.5\textwidth]{dragon.png}};
+               % from https://commons.wikimedia.org/wiki/File:DnD_Dragon.png
+      \end{tikzpicture}};
+
+\node [yshift=-5cm] at (current page.center) % title
+      {\begin{tikzpicture}[remember picture, overlay]
+          \fill[fill=blue!30] (-10,-5) rectangle (10 ,1);
+          \node[align=center] at (0,-2)
+               {\resizebox{1.57\linewidth}{!}{\Huge\textbf{Writing}}};
+	       \node[anchor=east,align=right] at (10,-5.5) {\Huge\color{black}\textit{very good fanfiction}};
+      \end{tikzpicture}};
+
+\node [shift={(-5cm,-5cm)}] at (current page.north east) % Revision 2
+      {\begin{tikzpicture}[remember picture, overlay]
+          \draw[fill=black] (0,5) -- (1.5,5) -- (5,1.5) -- (5,0) -- cycle ;
+          \node[inner sep=0pt,rotate=-45] (rev) at (2.9,2.9) {\huge\color{white}\textbf{Revision 2}};
+      \end{tikzpicture}};
+
+\node [align=center] at (current page.south) % bottom
+      {\begin{tikzpicture}[remember picture, overlay]
+          \node[anchor=south west, align=left] at (-10,0.5)
+               {\resizebox{.3\linewidth}{!}
+                 {\Huge\color{black}
+                   \textbf{G\color{blue!30}'\color{black}ARGLE\textsuperscript{\large{\textregistered}}}}};
+               \node[anchor=south east, align=right] at (10,0.5) {\Huge\color{black}\textbf{Loeka}};
+      \end{tikzpicture}};
+
 \end{tikzpicture}
 
-\pagebreak
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 \end{document}
